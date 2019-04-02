@@ -13,7 +13,7 @@ public class SeasonReader {
                 new InputStreamReader(System.in));
         System.out.println("Input your month:");
         String month = br.readLine();
-        Seasons seasons;
+        Seasons seasons = null;
 
         switch (month.toUpperCase()) {
             case "DECEMBER":
@@ -41,10 +41,10 @@ public class SeasonReader {
                 break;
 
             default:
-                System.out.println("Hey, are you sure such month even exists?");
-                throw new IllegalArgumentException("There are only 12 months and non of them matches your input, sorry man");
-
+                System.out.printf("Hey, are you sure such month even exists?");
         }
-        System.out.println(month + " is in " + seasons);
+        if (seasons != null) {
+            System.out.println(month + " is in " + seasons);
+        }
     }
 }
