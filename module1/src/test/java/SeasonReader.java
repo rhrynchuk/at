@@ -43,6 +43,5 @@ public class SeasonReader {
             default:
                 System.out.println("Hey, are you sure such month even exists?");
         }
-
     }
 }
