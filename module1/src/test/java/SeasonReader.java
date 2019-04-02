@@ -13,35 +13,38 @@ public class SeasonReader {
                 new InputStreamReader(System.in));
         System.out.println("Input your month:");
         String month = br.readLine();
-
+        Seasons seasons;
 
         switch (month.toUpperCase()) {
             case "DECEMBER":
             case "JANUARY":
             case "FEBRUARY":
-                System.out.println(month + " is in " + Seasons.WINTER);
+                seasons = Seasons.WINTER;
                 break;
 
             case "MARCH":
             case "APRIL":
             case "MAY":
-                System.out.println(month + " is in " + Seasons.SPRING);
+                seasons = Seasons.SPRING;
                 break;
 
             case "JUNE":
             case "JULY":
             case "AUGUST":
-                System.out.println(month +" is in "+ Seasons.SUMMER);
+                seasons = Seasons.SUMMER;
                 break;
 
             case "SEPTEMBER":
             case "OCTOBER":
             case "NOVEMBER":
-                System.out.println(month +" is in "+ Seasons.AUTUMN);
+                seasons = Seasons.AUTUMN;
                 break;
 
             default:
                 System.out.println("Hey, are you sure such month even exists?");
+                throw new IllegalArgumentException("There are only 12 months and non of them matches your input, sorry man");
+
         }
+        System.out.println(month + " is in " + seasons);
     }
 }
