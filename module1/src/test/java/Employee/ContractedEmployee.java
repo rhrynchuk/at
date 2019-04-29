@@ -2,9 +2,9 @@ package Employee;
 
 public class ContractedEmployee extends Employee {
 
-    String federalTaxId;
-    double hoursWorked;
-    double rate;
+    private String federalTaxId;
+    private double hoursWorked;
+    private double rate;
 
     public ContractedEmployee(String employeeId, String name, String federalTaxId) {
         super(employeeId, name);

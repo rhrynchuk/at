@@ -2,8 +2,8 @@ package Employee;
 
 public class SalariedEmployee extends Employee {
 
-    String socialSecurityNumber;
-    double fixedPay;
+    private String socialSecurityNumber;
+    private double fixedPay;
 
     public SalariedEmployee(String employeeId, String name, String socialSecurityNumber) {
         super(employeeId, name);
