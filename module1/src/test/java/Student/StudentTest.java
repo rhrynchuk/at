@@ -15,7 +15,6 @@ public class StudentTest {
 
     @Test
     public void testGetAvgRating() {
-
         assertEquals("Average rating is wrong", Student.getAvgRating(), 0.0d);
 
         Student student1 = new Student("Petro");
@@ -35,7 +34,7 @@ public class StudentTest {
 
         students.add(student);
 
-        assertEquals(student.getName(), "Petro", "Student.Student's name is wrong");
+        assertEquals(student.getName(), "Petro", "Student's name is wrong");
     }
 
     @Test
@@ -45,7 +44,7 @@ public class StudentTest {
 
         students.add(student);
 
-        assertEquals(student.getName(), "Volodymyr", "Student.Student's name is wrong");
+        assertEquals(student.getName(), "Volodymyr", "Student's name is wrong");
     }
 
     @Test

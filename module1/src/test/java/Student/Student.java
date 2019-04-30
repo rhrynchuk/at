@@ -6,12 +6,15 @@ package Student;
 public class Student {
     private String name;
     private int rating;
+    private static double avarageRating = 0.0d;
+    private static int studentCount;
 
-    public static double avarageRating = 0.0d;
-
-    public Student(){}
+    public Student(){
+        studentCount++;
+    }
 
     public Student(String name) {
+        this();
         this.name = name;
     }
 
@@ -31,6 +34,7 @@ public class Student {
     }
 
     public void setRating(int rating) {
+        avarageRating = (avarageRating + rating) / studentCount;
         this.rating = rating;
     }
 
@@ -38,22 +42,23 @@ public class Student {
         return avarageRating;
     }
 
-    //Methods
     public boolean betterStudent(Student student) {
         return this.rating > student.getRating();
     }
 
     public void changeRating(int rating) {
-        // TODO change this student's rating and average raiting of all students
+        avarageRating = ((avarageRating * studentCount) - this.rating + rating) / studentCount;
+        this.rating = rating;
     }
 
     public static void removeStudent(Student student) {
-        // TODO remove student
+        if (studentCount > 0) {
+            studentCount--;
+        }
     }
 
     @Override
     public String toString() {
-        // TODO return String with name and rating of this student
-        return "";
+        return "Rating of student " + getName() + " is " + getRating();
     }
 }
