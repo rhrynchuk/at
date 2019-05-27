@@ -34,7 +34,7 @@ public class Student {
     }
 
     public void setRating(int rating) {
-        avarageRating = (avarageRating + rating) / studentCount;
+        avarageRating = (avarageRating * (studentCount - 1) + rating) / studentCount;
         this.rating = rating;
     }
 
@@ -54,6 +54,7 @@ public class Student {
     public static void removeStudent(Student student) {
         if (studentCount > 0) {
             studentCount--;
+            avarageRating = 0.0d;
         }
     }
 
